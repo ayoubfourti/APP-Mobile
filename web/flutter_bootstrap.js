@@ -1,0 +1,13 @@
+{{flutter_js}}
+{{flutter_build_config}}
+
+_flutter.loader.load({
+  onEntrypointLoaded: async function(engineInitializer) {
+    let appRunner = await engineInitializer.initializeEngine({
+      useColorEmoji: true,
+      renderer: "html",
+      hostElement: undefined,
+    });
+    await appRunner.runApp();
+  }
+});
